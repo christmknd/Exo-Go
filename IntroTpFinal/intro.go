@@ -15,11 +15,20 @@ type ship struct {
 	hits        []Coors
 }
 
-func generation() {
-
+func (myship *ship) generateShip(coors Coors, orientation int, size int, hits Coors) {
+	myship.coors = Coors{coors.x, coors.y}
+	myship.orientation = orientation
+	myship.size = size
 }
 
-func display() {
+func (myship *ship) displayShip(coors Coors, orientation int, size int) {
+	fmt.Printf("Cordonnées : %d | %d \n ", myship.coors.x, myship.coors.y)
+	fmt.Printf("Orientation : %d \n ", myship.orientation)
+	fmt.Printf("size: %d \n", myship.size)
+	//fmt.Printf("hits: %d \n", myship.hits)
+}
+
+func displayGrid() {
 	var i, j int
 	a := 0
 	l := 10
@@ -41,5 +50,5 @@ func display() {
 }
 
 func main() {
-	display()
+	displayGrid()
 }
