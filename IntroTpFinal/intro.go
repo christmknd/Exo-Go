@@ -15,6 +15,10 @@ type ship struct {
 	hits        []Coors
 }
 
+func generation() {
+
+}
+
 func display() {
 	var i, j int
 	a := 0
